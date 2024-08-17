@@ -261,6 +261,7 @@ PlausibleWeb.BillingView.html
 PlausibleWeb.Captcha.html
 PlausibleWeb.Components.Billing.PlanBenefits.html
 PlausibleWeb.Components.FirstDashboardLaunchBanner.html
+PlausibleWeb.Components.FlowProgress.html
 PlausibleWeb.Components.Generic.html
 PlausibleWeb.Components.Google.html
 PlausibleWeb.Components.Settings.html
@@ -425,8 +426,8 @@ dist/merriweather-latin-ext-300-normal-K6L27CZ5.woff2
 dist/merriweather-vietnamese-300-italic-EHHNZPUO.woff2
 dist/merriweather-vietnamese-300-normal-U376L4Z4.woff2
 dist/remixicon-NKANDIL5.woff2
-dist/search_data-3C1E38CE.js
-dist/sidebar_items-E62145E7.js
+dist/search_data-427116EE.js
+dist/sidebar_items-E89CAAB9.js
 index.html
 readme.html
 search.html

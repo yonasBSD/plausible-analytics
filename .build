@@ -200,10 +200,12 @@ Plausible.Stats.JSONSchema.Utils.html
 Plausible.Stats.JSONSchema.html
 Plausible.Stats.Legacy.Dimensions.html
 Plausible.Stats.Legacy.QueryBuilder.html
+Plausible.Stats.Legacy.TimeOnPage.html
 Plausible.Stats.Metrics.html
 Plausible.Stats.Query.html
 Plausible.Stats.QueryOptimizer.html
 Plausible.Stats.QueryResult.html
+Plausible.Stats.QueryRunner.html
 Plausible.Stats.SQL.Expression.html
 Plausible.Stats.SQL.Fragments.html
 Plausible.Stats.SQL.SpecialMetrics.html
@@ -398,6 +400,8 @@ PlausibleWeb.RemoteIP.html
 PlausibleWeb.RequireAccountPlug.html
 PlausibleWeb.RequireLoggedOutPlug.html
 PlausibleWeb.Router.html
+PlausibleWeb.SettingsController.html
+PlausibleWeb.SettingsView.html
 PlausibleWeb.Site.MembershipController.html
 PlausibleWeb.Site.MembershipView.html
 PlausibleWeb.SiteController.html
@@ -441,8 +445,8 @@ dist/merriweather-latin-ext-300-normal-K6L27CZ5.woff2
 dist/merriweather-vietnamese-300-italic-EHHNZPUO.woff2
 dist/merriweather-vietnamese-300-normal-U376L4Z4.woff2
 dist/remixicon-NKANDIL5.woff2
-dist/search_data-25504322.js
-dist/sidebar_items-0792DBAE.js
+dist/search_data-83806D52.js
+dist/sidebar_items-D034020E.js
 index.html
 readme.html
 search.html

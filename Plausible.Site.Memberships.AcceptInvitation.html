@@ -14,7 +14,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-43PMFBC7.js"></script>
-    <script src="dist/sidebar_items-F90252DF.js"></script>
+    <script src="dist/sidebar_items-8324CD4B.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -174,6 +174,14 @@ the invitation and accepting it.</p>
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#t:membership/0" translate="no">membership()</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#t:transfer_error/0" translate="no">transfer_error()</a>
 
       </div>
@@ -188,7 +196,7 @@ the invitation and accepting it.</p>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#accept_invitation/2" translate="no">accept_invitation(invitation_id, user)</a>
+        <a href="#accept_invitation/2" translate="no">accept_invitation(invitation_or_transfer_id, user)</a>
 
       </div>
 
@@ -224,7 +232,7 @@ the invitation and accepting it.</p>
     </a>
     <h1 class="signature" translate="no">accept_error()</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/site/memberships/accept_invitation.ex#L32" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/site/memberships/accept_invitation.ex#L29" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -247,6 +255,45 @@ the invitation and accepting it.</p>
 
   </section>
 </section>
+<section class="detail" id="t:membership/0">
+
+  <div class="detail-header">
+    <a href="#t:membership/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">membership()</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/site/memberships/accept_invitation.ex#L35" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> membership() :: %Plausible.Teams.Membership{
+  __meta__: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  guest_memberships: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  inserted_at: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  role: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  team: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  team_id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  updated_at: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  user: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  user_id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()
+}</pre>
+
+      </div>
+
+
+  </section>
+</section>
 <section class="detail" id="t:transfer_error/0">
 
   <div class="detail-header">
@@ -256,7 +303,7 @@ the invitation and accepting it.</p>
     </a>
     <h1 class="signature" translate="no">transfer_error()</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/site/memberships/accept_invitation.ex#L26" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/site/memberships/accept_invitation.ex#L23" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -298,9 +345,9 @@ the invitation and accepting it.</p>
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">accept_invitation(invitation_id, user)</h1>
+    <h1 class="signature" translate="no">accept_invitation(invitation_or_transfer_id, user)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/site/memberships/accept_invitation.ex#L56" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/site/memberships/accept_invitation.ex#L55" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -313,7 +360,7 @@ the invitation and accepting it.</p>
       <div class="specs">
 
           <pre translate="no"><span class="attribute">@spec</span> accept_invitation(<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="Plausible.Auth.User.html#t:t/0">Plausible.Auth.User.t</a>()) ::
-  {:ok, <a href="Plausible.Site.Membership.html#t:t/0">Plausible.Site.Membership.t</a>()} | {:error, <a href="#t:accept_error/0">accept_error</a>()}</pre>
+  {:ok, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()} | {:error, <a href="#t:accept_error/0">accept_error</a>()}</pre>
 
       </div>
 
@@ -329,7 +376,7 @@ the invitation and accepting it.</p>
     </a>
     <h1 class="signature" translate="no">bulk_transfer_ownership_direct(sites, new_owner)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/site/memberships/accept_invitation.ex#L40" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/site/memberships/accept_invitation.ex#L39" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -342,7 +389,7 @@ the invitation and accepting it.</p>
       <div class="specs">
 
           <pre translate="no"><span class="attribute">@spec</span> bulk_transfer_ownership_direct([<a href="Plausible.Site.html#t:t/0">Plausible.Site.t</a>()], <a href="Plausible.Auth.User.html#t:t/0">Plausible.Auth.User.t</a>()) ::
-  {:ok, [<a href="Plausible.Site.Membership.html#t:t/0">Plausible.Site.Membership.t</a>()]} | {:error, <a href="#t:transfer_error/0">transfer_error</a>()}</pre>
+  {:ok, [<a href="#t:membership/0">membership</a>()]} | {:error, <a href="#t:transfer_error/0">transfer_error</a>()}</pre>
 
       </div>
 

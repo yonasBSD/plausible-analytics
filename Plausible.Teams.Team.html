@@ -14,7 +14,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-43PMFBC7.js"></script>
-    <script src="dist/sidebar_items-E1B09627.js"></script>
+    <script src="dist/sidebar_items-726CBD60.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -199,6 +199,14 @@ Pages
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#name_changeset/2" translate="no">name_changeset(team, attrs \\ %{})</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#start_trial/2" translate="no">start_trial(team, today \\ Date.utc_today())</a>
 
       </div>
@@ -243,7 +251,7 @@ Pages
     </a>
     <h1 class="signature" translate="no">t()</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/team.ex#L11" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/team.ex#L17" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -266,6 +274,8 @@ Pages
   name: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
   owner: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
   ownership: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  setup_at: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  setup_complete: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
   sites: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
   subscription: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
   team_invitations: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
@@ -302,7 +312,7 @@ Pages
     </a>
     <h1 class="signature" translate="no">changeset(name, today \\ Date.utc_today())</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/team.ex#L41" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/team.ex#L50" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -324,7 +334,7 @@ Pages
     </a>
     <h1 class="signature" translate="no">crm_sync_changeset(team, params)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/team.ex#L36" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/team.ex#L45" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -345,6 +355,30 @@ Pages
       <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">end_trial(team)</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/team.ex#L73" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="name_changeset/2">
+
+    <span id="name_changeset/1"></span>
+
+  <div class="detail-header">
+    <a href="#name_changeset/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">name_changeset(team, attrs \\ %{})</h1>
 
       <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/team.ex#L58" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
@@ -370,7 +404,7 @@ Pages
     </a>
     <h1 class="signature" translate="no">start_trial(team, today \\ Date.utc_today())</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/team.ex#L49" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/team.ex#L64" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -392,7 +426,7 @@ Pages
     </a>
     <h1 class="signature" translate="no">subscription_accept_traffic_until_offset_days()</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/team.ex#L78" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/team.ex#L93" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -414,7 +448,7 @@ Pages
     </a>
     <h1 class="signature" translate="no">trial_accept_traffic_until_offset_days()</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/team.ex#L76" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible/teams/team.ex#L91" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>

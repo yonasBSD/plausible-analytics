@@ -82,7 +82,7 @@ defmodule PlausibleWeb.Live.FunnelSettings.Form do
 
             <div class="mt-6 flex items-center justify-between gap-4">
               <span class="text-sm font-medium text-gray-900 dark:text-gray-100">
-                Allow other steps between funnel steps
+                Allow other activity between funnel steps
               </span>
               <div class="flex items-center gap-3">
                 <.toggle_switch

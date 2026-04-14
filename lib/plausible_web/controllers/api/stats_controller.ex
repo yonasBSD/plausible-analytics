@@ -340,8 +340,9 @@ defmodule PlausibleWeb.Api.StatsController do
     search_term = params["search_term"] || ""
 
     with {:ok, journey} <- parse_journey(steps),
+         {:ok, direction} <- parse_exploration_direction(params["direction"]),
          query = Query.from(site, params, debug_metadata: debug_metadata(conn)),
-         {:ok, next_steps} <- Exploration.next_steps(query, journey, search_term) do
+         {:ok, next_steps} <- Exploration.next_steps(query, journey, search_term, direction) do
       json(conn, next_steps)
     else
       _ ->
@@ -353,8 +354,9 @@ defmodule PlausibleWeb.Api.StatsController do
     site = conn.assigns.site
 
     with {:ok, journey} <- parse_journey(steps),
+         {:ok, direction} <- parse_exploration_direction(params["direction"]),
          query = Query.from(site, params, debug_metadata: debug_metadata(conn)),
-         {:ok, funnel} <- Exploration.journey_funnel(query, journey) do
+         {:ok, funnel} <- Exploration.journey_funnel(query, journey, direction) do
       json(conn, funnel)
     else
       {:error, :empty_journey} ->
@@ -381,6 +383,10 @@ defmodule PlausibleWeb.Api.StatsController do
       pathname: pathname
     }
   end
+
+  defp parse_exploration_direction("backward"), do: {:ok, :backward}
+  defp parse_exploration_direction("forward"), do: {:ok, :forward}
+  defp parse_exploration_direction(_), do: {:ok, :forward}
 
   on_ee do
     def funnel(conn, %{"id" => funnel_id} = params) do

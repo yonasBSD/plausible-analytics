@@ -329,6 +329,61 @@ defmodule Plausible.Stats.ExplorationTest do
       assert next_step2.visitors == 1
     end
 
+    test "does not suggest the same path/pathname as in previous step (regression test)" do
+      site = new_site()
+
+      now = DateTime.utc_now()
+
+      ago = fn ms -> DateTime.shift(now, minute: -1 * ms) end
+
+      # The issue manifested in some very specific combinations of events with occurrences
+      # of different path/pathname combinations, some of them with identical timestamp.
+      #
+      # The cause was inconsistent ordering between `q_pairs` and `q_steps` in `steps_query`.
+      #
+      populate_stats(site, [
+        build(:pageview, user_id: 123, pathname: "/:dashboard", timestamp: ago.(100)),
+        build(:pageview, user_id: 123, pathname: "/sites", timestamp: ago.(100)),
+        build(:pageview, user_id: 123, pathname: "/sites", timestamp: ago.(99)),
+        build(:pageview, user_id: 123, pathname: "/:dashboard", timestamp: ago.(98)),
+        build(:pageview, user_id: 123, pathname: "/sites", timestamp: ago.(97)),
+        build(:pageview, user_id: 123, pathname: "/:dashboard", timestamp: ago.(96)),
+        build(:pageview, user_id: 123, pathname: "/sites", timestamp: ago.(95)),
+        build(:pageview, user_id: 123, pathname: "/:dashboard", timestamp: ago.(94)),
+        build(:pageview, user_id: 123, pathname: "/sites", timestamp: ago.(93)),
+        build(:pageview, user_id: 123, pathname: "/sites", timestamp: ago.(92)),
+        build(:pageview, user_id: 123, pathname: "/sites", timestamp: ago.(91)),
+        build(:pageview, user_id: 123, pathname: "/:dashboard", timestamp: ago.(90)),
+        build(:pageview, user_id: 123, pathname: "/sites", timestamp: ago.(89)),
+        build(:pageview, user_id: 123, pathname: "/sites", timestamp: ago.(88)),
+        build(:pageview, user_id: 123, pathname: "/:dashboard", timestamp: ago.(87)),
+        build(:pageview, user_id: 123, pathname: "/sites", timestamp: ago.(87)),
+        build(:pageview, user_id: 123, pathname: "/:dashboard/", timestamp: ago.(86)),
+        build(:pageview, user_id: 123, pathname: "/sites", timestamp: ago.(85)),
+        build(:pageview, user_id: 123, pathname: "/:dashboard", timestamp: ago.(84)),
+        build(:pageview, user_id: 123, pathname: "/sites", timestamp: ago.(83)),
+        build(:pageview, user_id: 123, pathname: "/:dashboard", timestamp: ago.(82)),
+        build(:pageview, user_id: 123, pathname: "/sites", timestamp: ago.(81)),
+        build(:pageview, user_id: 123, pathname: "/:dashboard", timestamp: ago.(80)),
+        build(:pageview, user_id: 123, pathname: "/sites", timestamp: ago.(79)),
+        build(:pageview, user_id: 123, pathname: "/:dashboard", timestamp: ago.(78)),
+        build(:pageview, user_id: 123, pathname: "/sites", timestamp: ago.(77)),
+        build(:pageview, user_id: 123, pathname: "/:dashboard", timestamp: ago.(76))
+      ])
+
+      journey = [
+        %Exploration.Journey.Step{name: "pageview", pathname: "/sites"}
+      ]
+
+      query = QueryBuilder.build!(site, input_date_range: :all)
+
+      assert {:ok, [%{step: %{pathname: "/:dashboard"}}, %{step: %{pathname: "/:dashboard/"}}]} =
+               Exploration.next_steps(query, journey, "", :forward)
+
+      assert {:ok, [%{step: %{pathname: "/:dashboard"}}, %{step: %{pathname: "/:dashboard/"}}]} =
+               Exploration.next_steps(query, journey, "", :backward)
+    end
+
     test "treats identical sequence of events as a single step" do
       site = new_site()
 
